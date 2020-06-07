@@ -1,13 +1,7 @@
 .logo {
-    height: 10vmin;
+    height: 6vmin;
     pointer-events: none;
   }
 
-  .logo-div{
-    height: 10vmin;
-    pointer-events: none;
-    padding-right: 40%;
-  }
   .book-button-div{
-      margin-right: 5px;
   }

@@ -1,2 +1,5 @@
-.toolbarLink {
-  }
+
+.logo {
+  height: 8vmin;
+  pointer-events: none;
+}

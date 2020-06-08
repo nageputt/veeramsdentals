@@ -1,0 +1,27 @@
+.slides {
+  position: relative;
+}
+
+.slides .slick-prev,
+.slides .slick-next {
+  position: absolute;
+  top: 50%;
+  z-index: 1;
+  opacity: 0.25;
+}
+.slides .slick-prev:before,
+.slides .slick-next:before {
+  font-size: 50px !important;
+}
+.slides .slick-prev:hover,
+.slides .slick-next:hover {
+  opacity: 0.75;
+}
+
+.slides .slick-prev {
+  left: 5%;
+}
+
+.slides .slick-next {
+  right: 5%;
+}

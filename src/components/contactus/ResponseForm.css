@@ -1,0 +1,15 @@
+.MuiPaper-root.MuiPaper-elevation3.MuiPaper-rounded {
+    display: inline-block;
+    height: 450px;
+    top: 5px;
+}
+.quotediv{
+    text-align: center;
+    padding-top: 18px;
+}
+
+.errorMessage {
+    color: red;
+    font-size: 0.75em;
+    display: relative;
+  }

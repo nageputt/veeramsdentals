@@ -1,0 +1,26 @@
+.contactbanner{
+    height: 40vmin;
+}
+.address-icon-div {
+@media (min-width: 768px)
+
+    width: 13.556%;
+}
+.address-icon-div{
+@media (min-width: 768px)
+
+    width: 50%;
+}
+
+.address-div{
+@media (min-width: 768px)
+
+    width: 86.444%,
+    
+}
+.address-div {
+@media (min-width: 768px)
+
+    width: 50%,
+    display: flex;
+}

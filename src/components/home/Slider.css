@@ -2,23 +2,23 @@
   height: 600px !important;
 }
 
-/* .previousButton {
-  background: url("https://svgshare.com/i/Lyc.svg") no-repeat center center !important;
+.previousButton {
+  /* background: url("https://svgshare.com/i/Lyc.svg") no-repeat center center !important;
   width: 16px !important;
   height: 16px !important;
   background-color: grey !important;
   border-radius: 50% !important;
-  opacity: 0.5 !important;
+  opacity: 0.5 !important; */
 }
 
 .nextButton {
-  background: url("https://svgshare.com/i/Lws.svg") no-repeat center center !important;
+  /* background: url("https://svgshare.com/i/Lws.svg") no-repeat center center !important;
   width: 16px !important;
   height: 16px !important;
   background-color: grey !important;
   border-radius: 50% !important;
-  opacity: 0.5 !important;
-} */
+  opacity: 0.5 !important; */
+}
 
 .slider a.previousButton:not(.disabled):hover,
 .slider a.nextButton:not(.disabled):hover {
@@ -35,7 +35,7 @@
   text-align: center !important;
   width: 800px;
   position: relative;
-  transform: translate(100px, 70px);
+  transform: translate(100px, 80px);
   transition-delay: 0.8s;
   opacity: 1;
 }
@@ -43,7 +43,7 @@
 .slide.animateIn.previous .slider-inner,
 .slide.current .slider-inner,
 .slide.animateIn.next .slider-inner {
-  transform: translate(100px, 70px);
+  transform: translate(100px, 80px);
   transition-delay: 0.8s;
   opacity: 1;
 }
@@ -56,15 +56,16 @@
 
 .slider-header {
   font-size: 40px;
-  padding-top: 12px;
+  padding-top: 16px;
+  padding-left: 16px;
+  padding-right: 16px;
   font-weight: bold;
   text-align: center !important;
 }
 
 .slider-para {
   font-size: 30px;
-  padding-top: 16px;
-  padding-bottom: 16px;
+  padding: 16px;
   text-align: center !important;
 }
 

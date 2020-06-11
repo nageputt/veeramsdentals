@@ -32,13 +32,15 @@ const content = [
 class Slider extends Component {
   render() {
     return (
-      <AnimatedSlider autoplay={3000}>
+      <AnimatedSlider>
         {content.map((item, index) => (
           <div
             style={{
               backgroundImage: `url(${item.image})`,
               backgroundPosition: `center`,
-              minHeight: `800px`,
+              backgroundRepeat: `no-repeat`,
+              backgroundSize: `cover`,
+              height: `600px`,
             }}
           >
             <div class="slider-content">

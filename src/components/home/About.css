@@ -1,0 +1,44 @@
+/* two column code */
+.about-header {
+  text-align: center;
+}
+
+@keyframes header {
+  0% {
+    left: 0px;
+    top: 0px;
+  }
+
+  100% {
+    left: 0px;
+    top: 0px;
+  }
+}
+
+.about-header h1 {
+  font-size: 5em !important;
+  font-family: sans-serif;
+}
+.about-row {
+  display: flex;
+  align-items: stretch;
+  flex-flow: row wrap;
+}
+.about-text-col {
+  order: 2;
+  text-align: center;
+  padding: 25px 0px;
+  width: 50%;
+}
+.about-text-col p {
+  font-size: 1.9em !important;
+}
+.about-image-col {
+  text-align: center;
+  order: 1;
+  width: 50%;
+}
+.img-style {
+  border-radius: 15px;
+  height: 48vh;
+}

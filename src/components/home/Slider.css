@@ -1,5 +1,5 @@
 .slider {
-  height: 600px !important;
+  height: 50vmin !important;
 }
 
 .previousButton {
@@ -31,9 +31,9 @@
 
 .slider-inner {
   background-color: rgba(255, 208, 0, 0.4) !important;
-  height: 450px;
+  height: 35vh;
   text-align: center !important;
-  width: 800px;
+  width: 40vw;
   position: relative;
   transform: translate(100px, 80px);
   transition-delay: 0.8s;
@@ -55,7 +55,7 @@
 }
 
 .slider-header {
-  font-size: 40px;
+  font-size: 2.5em;
   padding-top: 16px;
   padding-left: 16px;
   padding-right: 16px;
@@ -64,7 +64,7 @@
 }
 
 .slider-para {
-  font-size: 30px;
+  font-size: 1.5em;
   padding: 16px;
   text-align: center !important;
 }
@@ -78,7 +78,7 @@
   text-align: center !important;
   text-decoration: none;
   display: inline-block;
-  font-size: 16px !important;
+  font-size: 1.2em !important;
   cursor: pointer !important;
   pointer-events: all !important;
 }

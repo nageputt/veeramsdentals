@@ -7,7 +7,7 @@ import home_2 from "../../assets/veera_home_2.jpg";
 
 const content = [
   {
-    title: "Vulputate Mollis Ultricies Fermentum Parturient",
+    title: "Vulputate Mollis Ultricies Fermentum",
     description:
       "Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. ",
     button: "Learn More",
@@ -16,12 +16,12 @@ const content = [
   {
     title: "volutpat Aenean metus",
     description:
-      "quam venenatis vestibulum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentumconsectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Duis mollis, est non commodo luctus, nisi erat porttitor ligula.",
+      "quam venenatis vestibulum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentumconsectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Duis mollis, est non commodo luctus, nisi erat ligula.",
     button: "Learn More",
     image: home_2,
   },
   {
-    title: "Vulputate Mollis Ultricies Fermentum Parturient",
+    title: "Vulputate Mollis Ultricies Fermentum",
     description:
       "Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. ",
     button: "Learn More",
@@ -32,7 +32,7 @@ const content = [
 class Slider extends Component {
   render() {
     return (
-      <AnimatedSlider>
+      <AnimatedSlider autoplay={2500}>
         {content.map((item, index) => (
           <div
             style={{
@@ -40,7 +40,7 @@ class Slider extends Component {
               backgroundPosition: `center`,
               backgroundRepeat: `no-repeat`,
               backgroundSize: `cover`,
-              height: `600px`,
+              height: `60vmin`,
             }}
           >
             <div class="slider-content">

@@ -1,0 +1,48 @@
+.review-div {
+  margin: 2em;
+  background-image: URL("https://image3.jdomni.in/banner/29082019/F5/CE/A9/F46CE66CB2F89314BA8C760AD2_1567053802539.webp");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.testimony-inner {
+  background-color: rgba(255, 255, 255, 0.85);
+}
+
+.testimony-header {
+  text-align: center;
+  font-size: 2em;
+  font-weight: bold;
+  padding-top: 1em;
+}
+
+.testimony-slider .swiper-wrapper {
+  min-height: 18em;
+  text-align: center !important;
+}
+
+.testimony-slider .swiper-container {
+  padding: 2em;
+}
+.review-card-header .MuiCardHeader-content {
+  text-align: left;
+}
+.review-card-header .MuiAvatar-root {
+  width: 4em !important;
+  height: 4em !important;
+}
+.MuiCardContent-root {
+  padding-bottom: 0em !important;
+}
+
+.MuiRating-root {
+  padding: 0.5em;
+}
+
+.review-card-header .MuiCardHeader-title {
+  font-size: 1.5em !important;
+}
+
+.review-card-header .MuiCardHeader-subheader {
+  font-size: 1em !important;
+}

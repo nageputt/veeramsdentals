@@ -32,36 +32,38 @@ const content = [
 class Slider extends Component {
   render() {
     return (
-      <AnimatedSlider autoplay={2500}>
-        {content.map((item, index) => (
-          <div
-            style={{
-              backgroundImage: `url(${item.image})`,
-              backgroundPosition: `center`,
-              backgroundRepeat: `no-repeat`,
-              backgroundSize: `cover`,
-              height: `60vmin`,
-            }}
-          >
-            <div class="slider-content">
-              <div class="slider-inner">
-                <div class="slider-header">
-                  {/* <h1>{item.title}</h1> */}
-                  {item.title}
-                </div>
-                <div class="slider-para">
-                  {/* <p>{item.description}</p> */}
-                  {item.description}
-                </div>
-                <div class="slider-button">
-                  {/* <button>{item.button}</button> */}
-                  {item.button}
+      <div className="home-slider">
+        <AnimatedSlider autoplay={2500}>
+          {content.map((item, index) => (
+            <div
+              style={{
+                backgroundImage: `url(${item.image})`,
+                backgroundPosition: `center`,
+                backgroundRepeat: `no-repeat`,
+                backgroundSize: `cover`,
+                height: `60vmin`,
+              }}
+            >
+              <div class="slider-content">
+                <div class="slider-inner">
+                  <div class="slider-header">
+                    {/* <h1>{item.title}</h1> */}
+                    {item.title}
+                  </div>
+                  <div class="slider-para">
+                    {/* <p>{item.description}</p> */}
+                    {item.description}
+                  </div>
+                  <div class="slider-button">
+                    {/* <button>{item.button}</button> */}
+                    {item.button}
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        ))}
-      </AnimatedSlider>
+          ))}
+        </AnimatedSlider>
+      </div>
     );
   }
 }

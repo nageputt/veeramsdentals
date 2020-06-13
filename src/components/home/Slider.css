@@ -1,4 +1,4 @@
-.slider {
+.home-slider .slider {
   height: 50vmin !important;
   animation: slideFadeIn 2s;
 }

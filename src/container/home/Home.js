@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Slider from "../../components/home/Slider";
 import About from "../../components/home/About";
+import Testimony from "../../components/home/Testimony";
 // import AnimatedSlider from "../../components/home/animated-slider/AnimatedSlider";
 class Home extends Component {
   render() {
@@ -8,6 +9,7 @@ class Home extends Component {
       <div>
         <Slider></Slider>
         <About></About>
+        <Testimony></Testimony>
       </div>
     );
   }

@@ -23,6 +23,7 @@
   flex-flow: row wrap;
 }
 .about-text-col {
+  position: relative;
   order: 2;
   text-align: center;
   padding: 25px 0px;
@@ -33,6 +34,7 @@
   font-size: 1.9em !important;
 }
 .about-image-col {
+  position: relative;
   text-align: center;
   order: 1;
   width: 50%;
@@ -56,6 +58,6 @@
   }
 }
 .img-style {
-  border-radius: 15px;
+  border-radius: 1em;
   height: 48vh;
 }

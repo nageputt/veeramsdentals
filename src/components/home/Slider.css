@@ -1,5 +1,14 @@
 .slider {
   height: 50vmin !important;
+  animation: slideFadeIn 2s;
+}
+@keyframes slideFadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 .previousButton {

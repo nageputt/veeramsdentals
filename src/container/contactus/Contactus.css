@@ -1,4 +1,17 @@
 .contactbanner{
     height: 40vmin;
 }
+.address-div{
+    width: 55%;
+}
+
+.email-div{
+    width: 55%;
+}
+
+.phoneNo-link{
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+}
 

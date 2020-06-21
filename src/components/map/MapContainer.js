@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Map, GoogleApiWrapper, InfoWindow, Marker,DirectionsRenderer } from 'google-maps-react';
+import { Map, GoogleApiWrapper, InfoWindow, Marker } from 'google-maps-react';
 
 const mapStyles = {
   width: '50%',
@@ -37,9 +37,7 @@ onClose = props => {
           <div>
             <h4>{this.state.selectedPlace.name}</h4>
           </div>
-          <DirectionsRenderer
-          directions={this.state.directions}
-        />
+        
         </InfoWindow>
       </Map>
       </div>

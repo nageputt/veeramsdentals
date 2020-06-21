@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import GridDynamicRenderer from '../../components/Grid/GridDynamicRenderer';
-import ProfileCard from '../../components/Card/ProfileCard';
 
 class Team extends Component {
     state = {

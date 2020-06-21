@@ -5,7 +5,7 @@ import TreatmentCard from '../Card/TreatmentCard';
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow:1,
-    padding: 40
+    padding: 20
   },
 }));
 

@@ -14,7 +14,7 @@ const Navigation = styled.header`
   justify-content: space-between;
   align-items: center;
   height: auto;
-  margin-bottom: 60px;
+  margin-bottom: 30px;
   background: #f8f8f8;
 
   .logo a {

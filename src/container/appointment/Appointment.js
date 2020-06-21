@@ -98,12 +98,14 @@ export default class Appointment extends React.Component {
   }
 
   validateEmail(event) {
+      /* eslint-disable */
     const regex = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i
     this.setState({ email: event.target.value}) 
     return regex.test(event.target.value) ? this.setState({validEmail: true }) : this.setState({ validEmail: false })
   }
 
   validatePhone(event) {
+      /* eslint-disable */
     const regex = /^(1\s|1|)?((\(\d{3}\))|\d{3})(\-|\s)?(\d{3})(\-|\s)?(\d{4})$/
     this.setState({ phone: event.target.value }) 
     return regex.test(event.target.value) ? this.setState({ validPhone: true }) : this.setState({ validPhone: false })

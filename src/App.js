@@ -5,6 +5,7 @@ import Navbar from './components/navigation/navbar/Navbar';
 import Home from './container/home/Home';
 import Specialites from './container/specialites/Specialites';
 import Contactus from './container/contactus/Contactus';
+import Team from './container/team/Team';
 
 class App extends React.Component {
   render(){
@@ -18,7 +19,7 @@ class App extends React.Component {
         <Switch>
           <Route exact={true} path="/" component={Home} />
           <Route exact path="/specialites" component={Specialites} />
-          <Route exaxt path="/ourteam" component={Home} />
+          <Route exaxt path="/ourteam" component={Team} />
           <Route exact path="/contactus" component={Contactus} />
           <Route exact path="/bookApointment" component={Home} />
         </Switch>

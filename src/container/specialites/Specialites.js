@@ -24,13 +24,14 @@ class Specialites extends Component {
             'name'        : 'PROSTHODONTICS',
             'description' : 'Prosthodontics is a recognized dental specialty that deals with the replacement of missing or deficient teeth and/or related craniofacial tissues. Where bone, gums and teeth are destroyed, a prosthodontist can re-create the form and function that has been lost and help restore quality for their entire time of life.'
           }
-      ],
+      ]
     }
     render () {
         return (
             <div>
                 {/*<SpecialitesTab/>*/}
-                <GridDynamicRenderer gridDetails={this.state.cardDetails}/>
+                <GridDynamicRenderer 
+                    gridDetails={this.state.cardDetails} isSpecialites={true}/>
             </div>
         );
     }

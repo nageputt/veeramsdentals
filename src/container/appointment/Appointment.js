@@ -38,8 +38,13 @@ export default class Appointment extends React.Component {
     this.renderAppointmentTimes = this.renderAppointmentTimes.bind(this)
     this.handleSetAppointmentSlot = this.handleSetAppointmentSlot.bind(this)
     this.renderAppointmentConfirmation = this.renderAppointmentConfirmation.bind(this)
-  this.handleSubmit = this.handleSubmit.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this)
   }
+
+  checkDisableDate(date) {
+    return date.getDay() === 0 || date.getDay() === 6;
+  }
+
 
   renderConfirmationString() {
     const spanStyle = {color: '#00bcd4'}
@@ -166,9 +171,9 @@ export default class Appointment extends React.Component {
                   <DatePicker style={{
                         marginTop: 10,
                         marginLeft: 10
-                      }} disablePast
+                      }} minDate = {new Date()}
                       value={this.state.appointmentDate } hintText="Select a date"
-                      mode={smallScreen ? 'portrait' : 'landscape'}
+                      mode={smallScreen ? 'portrait' : 'landscape'} shouldDisableDate={day => this.checkDisableDate(day)}
                       onChange={(n, date) => this.handleSetAppointmentDate(date)}
                        />
                   </StepContent>

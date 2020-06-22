@@ -1,6 +1,4 @@
 import React, { Component } from "react";
-import AnimatedSlider from "react-animated-slider";
-import Slider from "react-slick";
 import Swiper from "react-id-swiper";
 import "swiper/css/swiper.css";
 import "react-animated-slider/build/horizontal.css";

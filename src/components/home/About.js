@@ -22,7 +22,7 @@ class About extends Component {
             </p>
           </div>
           <div class="about-image-col">
-            <img class="img-style" src={about_us}></img>
+            <img class="img-style" src={about_us} alt ={about_us}></img>
           </div>
         </div>
       </div>

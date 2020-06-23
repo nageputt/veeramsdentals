@@ -1,9 +1,10 @@
 import React, { Component } from "react";
-import "./About.css";
-import "./media-query/About-mq-1650~1240.css";
-import "./media-query/About-mq-900.css";
-import "./media-query/About-mq-650.css";
-import about_us from "../../assets/about_us.jpg";
+import "./css/About.css";
+import "./css/media-query/About-mq-1650~1240.css";
+import "./css/media-query/About-mq-900.css";
+import "./css/media-query/About-mq-650.css";
+import about_us from "../../../assets/about_us.jpg";
+
 class About extends Component {
   render() {
     return (

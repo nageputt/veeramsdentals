@@ -4,7 +4,7 @@ import "swiper/css/swiper.css";
 import "react-animated-slider/build/horizontal.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import "./Testimony.css";
+import "./css/Testimony.css";
 import Card from "@material-ui/core/Card";
 import CardHeader from "@material-ui/core/CardHeader";
 import Avatar from "@material-ui/core/Avatar";

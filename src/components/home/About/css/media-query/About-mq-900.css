@@ -25,6 +25,11 @@
     background-size: cover;
     background-position: center;
   }
+
+  .about-header {
+    background-color: rgba(255, 255, 255, 0.45);
+    width: 100%;
+  }
   .about-img {
     display: none;
   }

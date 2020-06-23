@@ -1,0 +1,24 @@
+@media screen and (max-width: 1605px) {
+  .review-card {
+    height: 300px;
+  }
+}
+
+@media screen and (max-width: 1410px) {
+  .review-card {
+    height: 350px;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .review-card {
+    height: 400px;
+  }
+  .testimony-header {
+    font-size: 2rem;
+  }
+  .review-card-header .MuiAvatar-root {
+    width: 3rem !important;
+    height: 3rem !important;
+  }
+}

@@ -1,0 +1,31 @@
+@media screen and (max-width: 600px) {
+  .review-card {
+    height: 350px;
+  }
+  .testimony-header {
+    font-size: 2rem;
+  }
+
+  .review-card-header .MuiCardHeader-title {
+    font-size: 1rem !important;
+  }
+
+  .review-card-header .MuiCardHeader-subheader {
+    font-size: 0.75rem !important;
+  }
+  .review-card-header .MuiAvatar-root {
+    width: 3rem !important;
+    height: 3rem !important;
+  }
+  .testimony-slider-one {
+    display: block;
+  }
+  .testimony-slider {
+    display: none;
+  }
+  .testimony-slider-one .swiper-wrapper .swiper-slide {
+    box-sizing: border-box;
+    padding: 2rem;
+    width: 650px;
+  }
+}

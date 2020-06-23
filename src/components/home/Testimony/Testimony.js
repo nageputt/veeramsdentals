@@ -5,6 +5,9 @@ import "react-animated-slider/build/horizontal.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./css/Testimony.css";
+import "./css/media-query/Testimony-mq-1605.css";
+import "./css/media-query/Testimony-mq-800.css";
+import "./css/media-query/Testimony-mq-600.css";
 import Card from "@material-ui/core/Card";
 import CardHeader from "@material-ui/core/CardHeader";
 import Avatar from "@material-ui/core/Avatar";
@@ -102,6 +105,22 @@ class Testimony extends Component {
         delay: 2000,
         disableOnInteraction: false,
       },
+
+      spaceBetween: 30,
+    };
+    const paramsOne = {
+      loop: true,
+      slidesPerView: 1,
+      speed: 2000,
+      pagination: {
+        el: ".swiper-pagination",
+        type: "bullets",
+        clickable: true,
+      },
+      autoplay: {
+        delay: 2000,
+        disableOnInteraction: false,
+      },
       spaceBetween: 30,
     };
     return (
@@ -137,13 +156,49 @@ class Testimony extends Component {
                       >
                         {item.description}
                       </Typography>
+                    </CardContent>
+                    <div class="rating-div">
                       <Rating
                         name="half-rating-read"
                         defaultValue={2.5}
                         precision={0.5}
                         readOnly
                       />
+                    </div>
+                  </Card>
+                </div>
+              ))}
+            </Swiper>
+          </div>
+
+          <div className="testimony-slider-one">
+            <Swiper {...paramsOne}>
+              {content.map((item, index) => (
+                <div className="swiper-card">
+                  <Card className="review-card">
+                    <CardHeader
+                      className="review-card-header"
+                      avatar={<Avatar src={item.userProfile}></Avatar>}
+                      title={item.user}
+                      subheader="September 14, 2016"
+                    />
+                    <CardContent>
+                      <Typography
+                        variant="body2"
+                        color="textSecondary"
+                        component="p"
+                      >
+                        {item.description}
+                      </Typography>
                     </CardContent>
+                    <div class="rating-div">
+                      <Rating
+                        name="half-rating-read"
+                        defaultValue={2.5}
+                        precision={0.5}
+                        readOnly
+                      />
+                    </div>
                   </Card>
                 </div>
               ))}

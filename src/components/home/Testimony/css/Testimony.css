@@ -1,5 +1,5 @@
 .review-div {
-  margin: 2em;
+  margin: 2rem;
   background-image: URL("https://image3.jdomni.in/banner/29082019/F5/CE/A9/F46CE66CB2F89314BA8C760AD2_1567053802539.webp");
   background-repeat: no-repeat;
   background-size: 100% 100%;
@@ -11,19 +11,19 @@
 
 .testimony-header {
   text-align: center;
-  font-size: 2em;
+  font-size: 2.5rem;
   font-weight: bold;
-  padding-top: 1em;
+  padding-top: 1rem;
 }
 
 .testimony-slider .swiper-wrapper {
-  min-height: 20em;
   text-align: center !important;
 }
 
 .testimony-slider .swiper-container {
-  padding: 2em;
+  padding: 2rem 2rem 4rem 2rem;
 }
+
 .review-card-header .MuiCardHeader-content {
   text-align: left;
 }
@@ -31,18 +31,24 @@
   width: 4em !important;
   height: 4em !important;
 }
-.MuiCardContent-root {
-  padding-bottom: 0em !important;
-}
 
 .MuiRating-root {
-  padding: 0.5em;
+  padding: 0.5rem;
 }
 
 .review-card-header .MuiCardHeader-title {
-  font-size: 1.5em !important;
+  font-size: 1.5rem !important;
 }
 
 .review-card-header .MuiCardHeader-subheader {
-  font-size: 1em !important;
+  font-size: 1rem !important;
+}
+
+.rating-div {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+}
+.testimony-slider-one {
+  display: none;
 }

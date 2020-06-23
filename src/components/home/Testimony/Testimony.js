@@ -5,7 +5,7 @@ import "react-animated-slider/build/horizontal.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./css/Testimony.css";
-import "./css/media-query/Testimony-mq-1605.css";
+import "./css/media-query/Testimony-mq-1605~1100.css";
 import "./css/media-query/Testimony-mq-800.css";
 import "./css/media-query/Testimony-mq-600.css";
 import Card from "@material-ui/core/Card";

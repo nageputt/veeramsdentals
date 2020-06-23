@@ -1,0 +1,13 @@
+@media screen and (max-width: 1400px) {
+  .home-slider .slider {
+    height: 40rem !important;
+  }
+  .slider-main {
+    height: 40rem !important;
+  }
+
+  .slider-inner {
+    height: 25rem;
+    width: 35rem;
+  }
+}

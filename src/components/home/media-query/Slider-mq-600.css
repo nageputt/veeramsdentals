@@ -1,0 +1,56 @@
+@media screen and (max-width: 600px) {
+  .home-slider .slider {
+    height: 30rem !important;
+  }
+  .slider-main {
+    height: 30rem !important;
+  }
+
+  .slider-inner {
+    height: 23rem;
+    width: 18rem;
+  }
+
+  .slider-header {
+    font-size: 2rem;
+  }
+
+  .slider-para {
+    font-size: 1rem;
+  }
+  .slider-button {
+    padding: 8px 8px;
+    display: inline-block;
+    font-size: 0.75rem !important;
+  }
+  .slider-inner {
+    transform: translate(35px, 60px);
+  }
+
+  .slide.animateIn.previous .slider-inner,
+  .slide.current .slider-inner,
+  .slide.animateIn.next .slider-inner {
+    transform: translate(35px, 60px);
+  }
+
+  .slider a.previousButton:not(.disabled):hover,
+  .slider a.nextButton:not(.disabled):hover {
+    transform: translateY(-50%) scale(1.75);
+  }
+
+  .slider a.previousButton svg,
+  .slider a.nextButton svg {
+    height: 20px !important;
+    width: 10px !important;
+  }
+  .slider a.previousButton,
+  .slider a.nextButton {
+    padding: 5px;
+  }
+  .slider a.previousButton {
+    left: 8px;
+  }
+  .slider a.nextButton {
+    right: 8px;
+  }
+}

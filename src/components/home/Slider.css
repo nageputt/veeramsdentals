@@ -1,5 +1,5 @@
 .home-slider .slider {
-  height: 50vmin !important;
+  height: 45rem !important;
   animation: slideFadeIn 2s;
 }
 @keyframes slideFadeIn {
@@ -11,28 +11,10 @@
   }
 }
 
-.previousButton {
-  /* background: url("https://svgshare.com/i/Lyc.svg") no-repeat center center !important;
-  width: 16px !important;
-  height: 16px !important;
-  background-color: grey !important;
-  border-radius: 50% !important;
-  opacity: 0.5 !important; */
-}
-
-.nextButton {
-  /* background: url("https://svgshare.com/i/Lws.svg") no-repeat center center !important;
-  width: 16px !important;
-  height: 16px !important;
-  background-color: grey !important;
-  border-radius: 50% !important;
-  opacity: 0.5 !important; */
-}
-
 .slider a.previousButton:not(.disabled):hover,
 .slider a.nextButton:not(.disabled):hover {
-  background-color: grey !important;
-  opacity: 0.5 !important;
+  background-color: none !important;
+  /* opacity: 0.5 !important; */
   transform: translateY(-50%) scale(1.5);
   cursor: pointer;
   color: white;
@@ -40,11 +22,11 @@
 
 .slider-inner {
   background-color: rgba(255, 208, 0, 0.4) !important;
-  height: 35vh;
+  height: 25rem;
   text-align: center !important;
-  width: 40vw;
+  width: 35rem;
   position: relative;
-  transform: translate(100px, 80px);
+  transform: translate(140px, 100px);
   transition-delay: 0.8s;
   opacity: 1;
 }
@@ -52,7 +34,7 @@
 .slide.animateIn.previous .slider-inner,
 .slide.current .slider-inner,
 .slide.animateIn.next .slider-inner {
-  transform: translate(100px, 80px);
+  transform: translate(140px, 100px);
   transition-delay: 0.8s;
   opacity: 1;
 }

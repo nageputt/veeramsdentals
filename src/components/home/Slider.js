@@ -2,6 +2,9 @@ import React, { Component } from "react";
 import AnimatedSlider from "react-animated-slider";
 import "react-animated-slider/build/horizontal.css";
 import "./Slider.css";
+import "./media-query/Slider-mq-1400.css";
+import "./media-query/Slider-mq-800.css";
+import "./media-query/Slider-mq-600.css";
 import home_1 from "../../assets/veera_home_1.jpg";
 import home_2 from "../../assets/veera_home_2.jpg";
 
@@ -16,7 +19,7 @@ const content = [
   {
     title: "volutpat Aenean metus",
     description:
-      "quam venenatis vestibulum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentumconsectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Duis mollis, est non commodo luctus, nisi erat ligula.",
+      "quam venenatis vestibulum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentumconsectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Duis mollis.",
     button: "Learn More",
     image: home_2,
   },
@@ -36,12 +39,13 @@ class Slider extends Component {
         <AnimatedSlider autoplay={2500}>
           {content.map((item, index) => (
             <div
+              class="slider-main"
               style={{
                 backgroundImage: `url(${item.image})`,
                 backgroundPosition: `center`,
                 backgroundRepeat: `no-repeat`,
                 backgroundSize: `cover`,
-                height: `60vmin`,
+                height: `45rem`,
               }}
             >
               <div class="slider-content">

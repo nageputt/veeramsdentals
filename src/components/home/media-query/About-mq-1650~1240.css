@@ -1,0 +1,30 @@
+@media screen and (max-width: 1600px) {
+  .about-header h1 {
+    font-size: 4rem;
+  }
+
+  .about-article p {
+    text-align: center;
+    font-size: 1.7rem;
+  }
+}
+
+@media screen and (max-width: 1440px) {
+  .about-header h1 {
+    font-size: 3.5rem;
+  }
+  .about-article p {
+    text-align: center;
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 1240px) {
+  .about-header h1 {
+    font-size: 3rem;
+  }
+  .about-article p {
+    text-align: center;
+    font-size: 1.25rem;
+  }
+}

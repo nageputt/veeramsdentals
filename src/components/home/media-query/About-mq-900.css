@@ -1,0 +1,24 @@
+@media screen and (max-width: 900px) {
+  .about-header h1 {
+    font-size: 3rem;
+  }
+  .about-article p {
+    text-align: center;
+    font-size: 1.8rem;
+    background: none;
+  }
+  .about-article {
+    width: 100%;
+  }
+
+  .about-section {
+    background-image: url("../../../assets/about_us.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.5;
+  }
+  .about-img {
+    display: none;
+  }
+}

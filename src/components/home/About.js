@@ -1,15 +1,18 @@
 import React, { Component } from "react";
 import "./About.css";
+import "./media-query/About-mq-1650~1240.css";
+import "./media-query/About-mq-900.css";
+import "./media-query/About-mq-650.css";
 import about_us from "../../assets/about_us.jpg";
 class About extends Component {
   render() {
     return (
-      <div>
-        <div class="about-header">
+      <section class="about-section">
+        <header class="about-header">
           <h1>About Us</h1>
-        </div>
-        <div class="about-row">
-          <div class="about-text-col">
+        </header>
+        <section class="about-detail">
+          <article class="about-article">
             <p>
               We, Veeram's Dental Clinic, situated at Amaravathi Road, Guntur,
               ANDHRA PRADESH are designed to be different as dentists. A modern
@@ -20,12 +23,12 @@ class About extends Component {
               state-of-the-art procedures, from routine care to full mouth
               reconstruction.
             </p>
-          </div>
-          <div class="about-image-col">
-            <img class="img-style" src={about_us} alt ={about_us}></img>
-          </div>
-        </div>
-      </div>
+          </article>
+          <aside class="about-img">
+            <img class="img-style" src={about_us} alt={about_us}></img>
+          </aside>
+        </section>
+      </section>
     );
   }
 }

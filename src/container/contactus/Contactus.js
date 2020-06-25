@@ -69,10 +69,15 @@ class Contactus extends React.Component {
                   </section>
                 </div>
               </div>
+              <div className="map-div">
               <MapContainer />
+              </div>
             </Grid>
             <Grid item xs={12} sm={4}>
-              <ResponseForm />
+            <Container component="main" maxWidth="m">
+            <ResponseForm />
+            </Container>
+             
             </Grid>
           </Grid>
         </Container>

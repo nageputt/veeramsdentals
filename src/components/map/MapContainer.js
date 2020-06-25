@@ -1,50 +1,68 @@
-import React, { Component } from 'react';
-import { Map, GoogleApiWrapper, InfoWindow, Marker } from 'google-maps-react';
+import React, { useState, useEffect } from "react";
+import {
+  withGoogleMap,
+  withScriptjs,
+  GoogleMap,
+  Marker,
+  InfoWindow
+} from "react-google-maps";
 
-const mapStyles = {
-  width: '50%',
-  height: '50%'
-};
+function Map() {
+  const [selectedPark, setSelectedPark] = useState(null);
 
-export class MapContainer extends Component {
-  state = {
-    showingInfoWindow: false,  //Hides or the shows the infoWindow
-    activeMarker: {},          //Shows the active marker upon click
-    selectedPlace: {}          //Shows the infoWindow to the selected place upon a marker
-  };
+  useEffect(() => {
+    const listener = e => {
+      if (e.key === "Escape") {
+        setSelectedPark(null);
+      }
+    };
+    window.addEventListener("keydown", listener);
 
-  onMarkerClick = (props, marker, e) =>
-  this.setState({
-    selectedPlace: props,
-    activeMarker: marker,
-    showingInfoWindow: true
-  });
+    return () => {
+      window.removeEventListener("keydown", listener);
+    };
+  }, []);
 
-onClose = props => {
-  if (this.state.showingInfoWindow) {
-    this.setState({
-      showingInfoWindow: false,
-      activeMarker: null
-    });
-  }
-};
-  render() {
-    return (
-      <div className='mapDiv'>
-      <Map google={this.props.google}  zoom={20}  style={mapStyles} initialCenter={{ lat: 16.3156542, lng: 80.437022}} >
-         <Marker name={'Veeram\'s Dental Clinic'} />
-        <InfoWindow marker={this.state.activeMarker} style={mapStyles} visible={this.state.showingInfoWindow} onClose={this.onClose}>
+  return (
+    <GoogleMap
+      defaultZoom={15}
+      defaultCenter={{ lat: 16.3156542, lng: 80.437022}}
+    >
+        <Marker name={'Veeram\'s Dental Clinic'}
+          position={{
+            lat: 16.3156542, lng: 80.437022
+          }}
+          onClick={() => {
+            setSelectedPark('Veeram\'s Dental Clinic');
+          }}
+        />
+
+      {selectedPark && (
+        <InfoWindow visible={false}  onCloseClick={() => { setSelectedPark(null);}}
+          position={{
+            lat: 16.3156542, lng: 80.437022
+          }}
+        >
           <div>
-            <h4>{this.state.selectedPlace.name}</h4>
+            <h2>{selectedPark}</h2>
           </div>
-        
         </InfoWindow>
-      </Map>
-      </div>
-    );
-  }
+      )}
+    </GoogleMap>
+  );
 }
 
-export default GoogleApiWrapper({
-  apiKey: 'AIzaSyCJeInUgOe6FAV2yVL4E625fOwaZIr7Cow'
-})(MapContainer);
+const MapWrapped = withScriptjs(withGoogleMap(Map));
+
+export default function MapContainer() {
+  return (
+    <div style={{ width: "50vw", height: "50vh" }}>
+      <MapWrapped
+        googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=AIzaSyCJeInUgOe6FAV2yVL4E625fOwaZIr7Cow`}
+        loadingElement={<div style={{ height: `100%` }} />}
+        containerElement={<div style={{ height: `100%` }} />}
+        mapElement={<div style={{ height: `100%` }} />}
+      />
+    </div>
+  );
+}

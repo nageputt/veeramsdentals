@@ -1,17 +1,48 @@
-.contactbanner{
-    height: 40vmin;
-}
-.address-div{
-    width: 55%;
+.contactbanner {
+  height: 40vmin;
 }
 
-.email-div{
-    width: 55%;
+.email-div {
+  width: 100%;
 }
 
-.phoneNo-link{
-    cursor: pointer;
-    text-decoration: none;
-    color: black;
+.phoneNo-link {
+  cursor: pointer;
+  text-decoration: none;
+  color: black;
+}
+.address-div {
+  display: flex;
+  flex-flow: row wrap;
+  width: 100%;
 }
 
+.address-div,
+.timing-div {
+  margin-top: 1rem;
+}
+
+.address-header,
+.email-header,
+.call-header,
+.timing-header {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+}
+
+.address-header svg,
+.email-header svg,
+.call-header svg,
+.timing-header svg {
+  display: block;
+  box-sizing: border-box;
+  margin-right: 0.5rem;
+}
+
+.address-header h3,
+.email-header h3,
+.call-header h3,
+.timing-header h3 {
+  margin: 0;
+}

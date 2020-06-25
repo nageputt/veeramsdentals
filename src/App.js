@@ -13,19 +13,21 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <Helmet>
-          <title>{"Veeram's Dentals"}</title>
-        </Helmet>
-        <Router>
-          <Navbar />
-          <Switch>
-            <Route exact={true} path="/" component={Home} />
-            <Route exact path="/specialites" component={Specialites} />
-            <Route exaxt path="/ourteam" component={Team} />
-            <Route exact path="/contactus" component={Contactus} />
-            <Route exact path="/bookApointment" component={Appointment} />
-          </Switch>
-        </Router>
+        <header class="header-class">
+          <Helmet>
+            <title>{"Veeram's Dentals"}</title>
+          </Helmet>
+          <Router>
+            <Navbar />
+            <Switch>
+              <Route exact={true} path="/" component={Home} />
+              <Route exact path="/specialites" component={Specialites} />
+              <Route exaxt path="/ourteam" component={Team} />
+              <Route exact path="/contactus" component={Contactus} />
+              <Route exact path="/bookApointment" component={Appointment} />
+            </Switch>
+          </Router>
+        </header>
         <Footer></Footer>
       </div>
     );

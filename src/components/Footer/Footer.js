@@ -12,14 +12,14 @@ class Footer extends Component {
   render() {
     return (
       <footer class="footer">
-        <section class="menu-section">
+        {/* <section class="menu-section">
           <ul>
             <li>Home</li>
             <li>Specialities</li>
             <li>Contact Us</li>
             <li>Book Appointment</li>
           </ul>
-        </section>
+        </section> */}
         <section class="icon-section">
           <TwitterIcon></TwitterIcon>
           <FacebookIcon></FacebookIcon>

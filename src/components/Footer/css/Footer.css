@@ -5,13 +5,13 @@ li {
 }
 
 .footer {
-  height: 50px;
+  height: 70px;
   background-color: black;
   border: 8px solid black;
   color: white;
   display: flex;
-  flex-flow: row wrap;
-  justify-content: space-between;
+  flex-flow: column wrap;
+  justify-content: center;
 }
 
 .menu-section {
@@ -43,6 +43,7 @@ li {
   display: flex;
   flex-flow: row wrap;
   align-self: center;
+  margin-top: 0.5rem;
 }
 
 .copyright-section {

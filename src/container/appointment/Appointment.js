@@ -1,22 +1,21 @@
 import React from 'react'
-import RaisedButton from "material-ui/RaisedButton";
+import Button from '@material-ui/core/Button';
 import FlatButton from "material-ui/FlatButton";
 import moment from "moment";
-import DatePicker from "material-ui/DatePicker";
 import Dialog from "material-ui/Dialog";
 import SelectField from "material-ui/SelectField";
 import MenuItem from "material-ui/MenuItem";
-import TextField from "material-ui/TextField";
+import TextField from "@material-ui/core/TextField";
+import Grid from '@material-ui/core/Grid';
 import Card from "material-ui/Card";
-import {
-  Step,
-  Stepper,
-  StepLabel,
-  StepContent
-} from "material-ui/Stepper";
+import Calendar from 'react-calendar';
+import Stepper from '@material-ui/core/Stepper';
+import Step from '@material-ui/core/Step';
+import StepLabel from '@material-ui/core/StepLabel';
+import StepContent from '@material-ui/core/StepContent';
 import { RadioButton, RadioButtonGroup } from "material-ui/RadioButton";
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
-
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import 'react-calendar/dist/Calendar.css';
 
 const aftrSlot = ["9:00", "10:00", "11:00"];
 const mngSlot = ["12:00","1:00" , "2:00", "3:00", "4:00"];
@@ -47,7 +46,7 @@ export default class Appointment extends React.Component {
 
 
   renderConfirmationString() {
-    const spanStyle = {color: '#00bcd4'}
+    const spanStyle = {color: '#3483ec'}
     return this.state.confirmationTextVisible ? <h2 style={{ textAlign: this.state.smallScreen ? 'center' : 'left', color: '#bdbdbd', lineHeight: 1.5, padding: '0 10px', fontFamily: 'Roboto'}}>
       { <span>
         Scheduling a
@@ -102,6 +101,17 @@ export default class Appointment extends React.Component {
     this.setState({ appointmentSlot: slot })
   }
 
+  updateStep(stepNumber){
+    if(this.state.appointmentDate){
+      this.setState({ stepIndex: stepNumber})
+    }else if(this.state.appointmentSlot){
+      this.setState({ stepIndex: stepNumber})
+    }else if(stepNumber === 0){
+      this.setState({ stepIndex: stepNumber })
+    }
+  
+
+  }
   validateEmail(event) {
       /* eslint-disable */
     const regex = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i
@@ -116,7 +126,7 @@ export default class Appointment extends React.Component {
     return regex.test(event.target.value) ? this.setState({ validPhone: true }) : this.setState({ validPhone: false })
   }
   renderAppointmentConfirmation() {
-    const spanStyle = { color: '#00bcd4' }
+    const spanStyle = { color: '#3483ec' }
     return <section>
       <p>Name: <span style={spanStyle}>{this.state.firstName} {this.state.lastName}</span></p>
       <p>Number: <span style={spanStyle}>{this.state.phone}</span></p>
@@ -144,10 +154,8 @@ export default class Appointment extends React.Component {
         label="Cancel"
         primary={false}
         onClick={() => this.setState({ confirmationModalOpen : false})} />,
-      <FlatButton
-        label="Confirm"
-        primary={true}
-        onClick={() => this.handleSubmit()} />
+      <Button color="primary" 
+        onClick={() => this.handleSubmit()} >Confirm</Button>
     ]
     return (
       <MuiThemeProvider>
@@ -164,22 +172,15 @@ export default class Appointment extends React.Component {
             }}>
             <Stepper  activeStep={stepIndex} linear={false} orientation="vertical">
               <Step disabled={loading}>
-                <StepLabel onClick={() => this.setState({ stepIndex: 0 })}>
+                <StepLabel onClick={() => this.updateStep(0)}>
                   Choose an available day for your appointment
                 </StepLabel>
                 <StepContent>
-                  <DatePicker style={{
-                        marginTop: 10,
-                        marginLeft: 10
-                      }} minDate = {new Date()}
-                      value={this.state.appointmentDate } hintText="Select a date"
-                      mode={smallScreen ? 'portrait' : 'landscape'} shouldDisableDate={day => this.checkDisableDate(day)}
-                      onChange={(n, date) => this.handleSetAppointmentDate(date)}
-                       />
+                    <Calendar minDate = {new Date()} onChange={(date) => this.handleSetAppointmentDate(date)} value={this.state.appointmentDate} />
                   </StepContent>
               </Step>
               <Step disabled={ !this.state.appointmentDate }>
-                <StepLabel onClick={() => this.setState({ stepIndex: 1 })}>
+                <StepLabel onClick={() => this.updateStep(1)}>
                   Choose an available time for your appointment
                 </StepLabel>
                 <StepContent>
@@ -201,26 +202,37 @@ export default class Appointment extends React.Component {
                 </StepContent>
               </Step>
               <Step disabled={ !Number.isInteger(this.state.appointmentSlot) }>
-                <StepLabel onClick={() => this.setState({ stepIndex: 2 })}>
+                <StepLabel onClick={() => this.updateStep(2)}>
                   Share your contact information with us and we'll send you a reminder
                 </StepLabel>
                 <StepContent>
                   <section>
-                    <TextField  multiline  style={{ display: 'block' }} name="first_name" hintText="First Name" value = {this.state.firstName}
-                      label="First Name"  onChange={(evt, newValue) => this.setState({ firstName: newValue })}/>
-                    <TextField  multiline  style={{ display: 'block' }} name="last_name"  hintText="Last Name"  value = {this.state.lastName}
-                      label="Last Name" onChange={(evt, newValue) => this.setState({ lastName: newValue })}/>
-                    <TextField  multiline  style={{ display: 'block' }} name="email" hintText="name@mail.com"  value = {this.state.email}
-                      label="Email" errorText={this.state.validEmail ? null : 'Enter a valid email address'}
+                  <Grid container spacing={2}>
+                  <Grid item xs={12}  sm={6}>
+                    <TextField  multiline fullWidth size ='medium' style={{ display: 'block' }} name="first_name" hintText="First Name" value = {this.state.firstName}
+                      label="First Name"  onChange={(evt) => this.setState({ firstName: evt.target.value })}/>
+                    </Grid>
+                    <Grid item xs={12} sm={6}>
+                    <TextField  multiline fullWidth style={{ display: 'block' }} name="last_name"  hintText="Last Name"  value = {this.state.lastName}
+                      label="Last Name" onChange={(evt) => this.setState({ lastName: evt.target.value })}/>
+                   </Grid>
+                   <Grid item xs={12} sm={6}>
+                    <TextField  multiline fullWidth style={{ display: 'block' }} name="email" hintText="name@mail.com"  value = {this.state.email}
+                      label="Email" error= {!this.state.validEmail} helperText={this.state.validEmail ? null : 'Enter a valid email address'}
                       onChange={(evt) => this.validateEmail(evt)}/>
-                    <TextField  multiline  style={{ display: 'block' }} name="phone" hintText="(888) 888-8888"  value = {this.state.phone}
-                      label="Phone" errorText={this.state.validPhone ? null: 'Enter a valid phone number'}
+                   </Grid>
+                   <Grid item xs={12} sm={6}>
+                    <TextField multiline fullWidth  style={{ display: 'block' }} name="phone" hintText="(888) 888-8888"  value = {this.state.phone}
+                      label="Phone" error= {!this.state.validPhone} helperText={this.state.validPhone ? null: 'Enter a valid phone number'}
                       onChange={(evt) => this.validatePhone(evt)} />
-                    <RaisedButton 
-                      labelPosition="before" primary={true} fullWidth={true}
+                   </Grid>
+                   <Grid item xs={12} >
+                    <Button labelPosition="before" color="primary"  fullWidth variant="contained"
                       onClick={() => this.setState({ confirmationModalOpen: !this.state.confirmationModalOpen })}
-                      disabled={!contactFormFilled }
-                      style={{ marginTop: 20, maxWidth: 100, display: 'block'}} >{contactFormFilled ? 'Schedule' : 'Fill out your information to schedule'}</RaisedButton>
+                      disabled={!contactFormFilled } style={{ marginTop: 20, maxWidth: "100%", display: 'block'}} >
+                      {contactFormFilled ? 'Schedule' : 'Fill out your information to schedule'}</Button>
+                 </Grid>
+                 </Grid>
                   </section>
                 </StepContent>
               </Step>

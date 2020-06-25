@@ -43,14 +43,8 @@ class ResponseForm extends React.Component {
            number:'',
            email:'',
            desc:'',
-           formErrors: {
-            name: "",
-            number: "",
-            email: "",
-            desc: ""
-          }
-          
-
+           validEmail: true,
+           validPhone: true,
     };
     }
 
@@ -61,8 +55,28 @@ class ResponseForm extends React.Component {
 
     handleChange(e) {
         e.preventDefault();
-        this.setState({[e.target.name]: e.target.value });
+        if(e.target.name === 'email'){
+          this.validateEmail(e);
+        }else if (e.target.name === 'number'){
+          this.validatePhone(e);
+        }else{
+          this.setState({[e.target.name]: e.target.value });
+        }
+       
       }
+      validateEmail(event) {
+        /* eslint-disable */
+      const regex = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i
+      this.setState({ email: event.target.value}) 
+      return regex.test(event.target.value) ? this.setState({validEmail: true }) : this.setState({ validEmail: false })
+    }
+  
+    validatePhone(event) {
+        /* eslint-disable */
+      const regex = /^(1\s|1|)?((\(\d{3}\))|\d{3})(\-|\s)?(\d{3})(\-|\s)?(\d{4})$/
+      this.setState({ phone: event.target.value }) 
+      return regex.test(event.target.value) ? this.setState({ validPhone: true }) : this.setState({ validPhone: false })
+    }
 
   render() {
    return(
@@ -79,10 +93,10 @@ class ResponseForm extends React.Component {
             <TextField  multiline  name="name" value ={this.state.name} onChange={(e) => this.handleChange(e)}  required fullWidth id="name" label="Name" />
           </Grid>
           <Grid item xs={12} >
-            <TextField multiline  required fullWidth id="number" label="Phone Number" value={this.state.number} onChange={(e) => this.handleChange(e)}  name="number" />
+            <TextField multiline  required fullWidth id="number" label="Phone Number" value={this.state.number} onChange={(e) => this.handleChange(e)}  name="number"  errorText={this.state.validPhone ? null : 'Enter a valid Phone Number'} />
           </Grid>
           <Grid item xs={12}>
-            <TextField multiline  required fullWidth id="email" label="Email Address" name="email" value={this.state.email} onChange={(e) => this.handleChange(e)} />
+            <TextField multiline   fullWidth id="email" label="Email Address" name="email" value={this.state.email} onChange={(e) => this.handleChange(e)}  errorText={this.state.validEmail ? null : 'Enter a valid Email Address'}/>
           </Grid>
           <Grid item xs={12}>
             <TextField multiline rows={4} rowsMax={5} fullWidth name="desc" label="How can we help you?" id="desc" value ={this.state.desc} onChange={(e) => this.handleChange(e)}  placeholder='I was wondering about availability and rates. I need help with the following:'  />

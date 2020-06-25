@@ -9,7 +9,7 @@ import './Navbar.css';
 const Navigation = styled.header`
   width: 100%;
   border-bottom: 4px solid #3483ec;
-  z-index: 1;
+  z-index: 5;
   display: flex;
   justify-content: space-between;
   align-items: center;

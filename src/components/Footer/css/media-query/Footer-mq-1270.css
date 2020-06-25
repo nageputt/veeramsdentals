@@ -1,0 +1,27 @@
+@media screen and (max-width: 1270px) {
+  .footer {
+    height: 90px;
+    flex-flow: column nowrap;
+    justify-content: center;
+    width: 98%;
+  }
+  .icon-section {
+    padding: 0.5rem;
+    order: 1;
+  }
+  .menu-section {
+    order: 2;
+    justify-content: center;
+  }
+  .social-section {
+    order: 3;
+    padding: 0.5rem;
+    justify-content: center;
+  }
+  .copyright-section {
+    font-size: 0.8rem;
+  }
+  .menu-section li {
+    font-size: 1.1rem;
+  }
+}

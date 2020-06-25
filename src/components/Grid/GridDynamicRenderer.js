@@ -19,7 +19,8 @@ export default function GridDynamicRenderer(props) {
                <TreatmentCard 
                     imageUrl={objectValue.imageUrl} 
                     name={objectValue.name}
-                    description={objectValue.description}/>
+                    description={objectValue.description}
+                    id={index}/>
                 </Grid>        
                 ));
   } else {

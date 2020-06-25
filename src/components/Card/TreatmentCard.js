@@ -51,6 +51,7 @@ export default function TreatmentCard(props) {
         content : 'Video not found'
       }
   }
+  
   const getVideoId = async (cardId) =>{
     try{
       const response = await axios.get("specialites/getVideoUrl",{

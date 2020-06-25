@@ -16,7 +16,6 @@ const disconnectDb = async () => {
 };
 
 const specialitesDetails =  mongoose.model('veeramsSpecialitesDetails',new mongoose.Schema({}),"veerams_specialites_details");
-
 exports.specialitesDetails = specialitesDetails;
 exports.connectDb = connectDb;
 exports.disconnectDb = disconnectDb;

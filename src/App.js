@@ -8,7 +8,7 @@ import Contactus from "./container/contactus/Contactus";
 import Team from "./container/team/Team";
 import Appointment from "./container/appointment/Appointment";
 import Footer from "./components/Footer/Footer";
-import './App.css';
+import "./App.css";
 
 class App extends React.Component {
   render() {
@@ -29,6 +29,7 @@ class App extends React.Component {
             </Switch>
           </Router>
         </header>
+
         <Footer></Footer>
       </div>
     );

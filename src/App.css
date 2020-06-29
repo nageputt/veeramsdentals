@@ -1,7 +1,10 @@
-
-
-.header-class header{
+.header-class header {
   position: sticky !important;
   top: 0px !important;
   margin: 0px;
+}
+
+.header-class {
+  min-height: 91vh;
+  position: relative;
 }

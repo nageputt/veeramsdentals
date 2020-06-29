@@ -5,6 +5,9 @@ li {
 }
 
 .footer {
+  z-index: 999;
+  position: sticky;
+  bottom: 0;
   height: 70px;
   background-color: black;
   border: 8px solid black;

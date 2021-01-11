@@ -1,4 +1,3 @@
-import Axios from 'axios';
 import React, { Component } from 'react';
 import GridDynamicRenderer from '../../components/Grid/GridDynamicRenderer';
 import axios from 'axios';

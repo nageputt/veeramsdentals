@@ -5,8 +5,6 @@ import "./css/Slider.css";
 import "./css/media-query/Slider-mq-1400.css";
 import "./css/media-query/Slider-mq-800.css";
 import "./css/media-query/Slider-mq-600.css";
-import home_1 from "../../../assets/veera_home_1.jpg";
-import home_2 from "../../../assets/veera_home_2.jpg";
 import axios from "axios";
 
 

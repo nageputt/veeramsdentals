@@ -61,14 +61,7 @@ class ResponseForm extends React.Component {
             
           })
           .catch(error => console.log(error));
-          try{
-            const response = await axios.get("specialites/getVideoUrl",{
-                   params: {
-                     cardId: 1
-                   }
-                   });
-            }catch(error){
-             };
+         
       };
 
     handleChange(e) {

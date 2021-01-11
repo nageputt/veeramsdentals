@@ -53,23 +53,32 @@ export default function TreatmentCard(props) {
   }
   
   const getVideoId = async (cardId) =>{
-      
-    
-     try{
-       const response = await axios.get("specialites/getVideoUrl",{
-         params: {
-           cardId: cardId
-         }
-         });
-           setOpen(true);
-           setVideoId(response.data[0]['videoId']);
-       }catch(error){
-           severity = errorMap[error.response.status]['severity'];
-           content = errorMap[error.response.status]['content'];
-           setSeverity(severity);
-           setContent(content);
+       axios.get("https://react-burger-b72df.firebaseio.com/treatments.json",{
+      }).then(response =>{
+        setVideoId(response['data'][cardId]["videourl"]);
+        setOpen(true);
+        
+      }).catch(error => {
+        setSeverity("error");
+          setContent("Video not found");
            setShowToaster(true);
-         };
+      });
+    
+    // try{
+    //   const response = await axios.get("specialites/getVideoUrl",{
+    //     params: {
+    //       cardId: cardId
+    //     }
+    //     });
+    //       setOpen(true);
+    //       setVideoId(response.data[0]['videoId']);
+    //   }catch(error){
+    //       severity = errorMap[error.response.status]['severity'];
+    //       content = errorMap[error.response.status]['content'];
+    //       setSeverity(severity);
+    //       setContent(content);
+    //       setShowToaster(true);
+    //     };
         
       
   };

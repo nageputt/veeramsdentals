@@ -59,8 +59,10 @@ export default function TreatmentCard(props) {
         setOpen(true);
         
       }).catch(error => {
-        setSeverity("error");
-          setContent("Video not found");
+        severity = errorMap[error.response.status]['severity'];
+        content = errorMap[error.response.status]['content'];
+        setSeverity(severity);
+          setContent(content);
            setShowToaster(true);
       });
     

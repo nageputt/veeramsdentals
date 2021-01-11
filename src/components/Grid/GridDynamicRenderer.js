@@ -30,6 +30,9 @@ export default function GridDynamicRenderer(props) {
                     profileName = {objectValue.profileName}
                     designation = {objectValue.designation}
                     imageUrl = {objectValue.imageUrl}
+                    description= {objectValue.description}
+                    achievements = {objectValue.achievements}
+                    contacts = {objectValue.contacts}
                     />
                 </Grid>        
                 ));

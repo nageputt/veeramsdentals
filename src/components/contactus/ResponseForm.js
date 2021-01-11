@@ -7,6 +7,7 @@ import Grid from '@material-ui/core/Grid';
 import Container from '@material-ui/core/Container';
 import { makeStyles } from '@material-ui/core/styles';
 import './ResponseForm.css';
+import axios from 'axios';
 
 const classes = makeStyles(theme => ({
     mainPaper:{
@@ -49,8 +50,25 @@ class ResponseForm extends React.Component {
     }
 
    async handleSubmit (e) {
-        
-       
+     const quote = { 
+        name : this.state.name,
+        number:this.state.number,
+        email:this.state.email,
+        desc:this.state.desc
+     }
+     axios.post("https://react-burger-b72df.firebaseio.com/quotes.json", quote)
+          .then(response => {
+            
+          })
+          .catch(error => console.log(error));
+          try{
+            const response = await axios.get("specialites/getVideoUrl",{
+                   params: {
+                     cardId: 1
+                   }
+                   });
+            }catch(error){
+             };
       };
 
     handleChange(e) {
@@ -74,7 +92,7 @@ class ResponseForm extends React.Component {
     validatePhone(event) {
         /* eslint-disable */
       const regex = /^(1\s|1|)?((\(\d{3}\))|\d{3})(\-|\s)?(\d{3})(\-|\s)?(\d{4})$/
-      this.setState({ phone: event.target.value }) 
+      this.setState({ number: event.target.value }) 
       return regex.test(event.target.value) ? this.setState({ validPhone: true }) : this.setState({ validPhone: false })
     }
 

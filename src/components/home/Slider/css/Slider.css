@@ -1,5 +1,5 @@
 .home-slider .slider {
-  height: 45rem !important;
+  height: 25rem !important;
   animation: slideFadeIn 2s;
 }
 @keyframes slideFadeIn {
@@ -21,8 +21,8 @@
 }
 
 .slider-inner {
-  background-color: rgba(255, 208, 0, 0.4) !important;
-  height: 25rem;
+  /**background-color: rgba(255, 208, 0, 0.4) !important;*/
+  height: 18rem;
   text-align: center !important;
   width: 35rem;
   position: relative;

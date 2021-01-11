@@ -67,13 +67,11 @@ export default function ProfileCard(props) {
         title={props.profileName}
       />
       <CardContent>
-        <Typography variant="body2" color="textSecondary" component="p">
-          This impressive paella is a perfect party dish and a fun meal to cook together with your
-          guests. Add 1 cup of frozen peas along with the mussels, if you like.
+        <Typography variant="body2" color="textSecondary" component="p">{props.description}
         </Typography>
       </CardContent>
       <CardActions disableSpacing>
-        <IconButton aria-label="facebook">
+        <IconButton aria-label="facebook" onClick={()=> window.open(props.contacts.fb, "_blank")}>
           <FacebookIcon />
         </IconButton>
         <IconButton aria-label="twitter">
@@ -97,9 +95,7 @@ export default function ProfileCard(props) {
       <Collapse in={expanded} timeout="auto" unmountOnExit>
         <CardContent>
           <Typography paragraph>Achievements:</Typography>
-          <Typography paragraph>
-            Heat 1/2 cup of the broth in a pot until simmering, add saffron and set aside for 10
-            minutes.
+          <Typography paragraph>{props.achievements}
           </Typography>
         </CardContent>
       </Collapse>
